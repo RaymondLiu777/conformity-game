@@ -1,0 +1,102 @@
+/* Previous button */
+@keyframes moveRight1 {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(-10vw, 0px);
+    }
+    99% {
+        transform: translate(100vw, 0px);
+    }
+    100% {
+        transform: translate(-100vw, 0px);
+    }
+}
+
+@keyframes moveRight2 {
+    0%{
+        transform: translate(-100vw, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.moveRight1 {
+    animation: moveRight1 .5s 1;
+}
+
+.moveRight2 {
+    animation: moveRight2 .5s 1;
+}
+
+/* Next button */
+
+@keyframes moveLeft1 {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(10vw, 0px);
+    }
+    99% {
+        transform: translate(-100vw, 0px);
+    }
+    100% {
+        transform: translate(100vw, 0px);
+    }
+}
+
+@keyframes moveLeft2 {
+    0%{
+        transform: translate(100vw, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+.moveLeft1 {
+    animation: moveLeft1 .5s 1;
+}
+
+.moveLeft2 {
+    animation: moveLeft2 .5s 1;
+}
+
+/* Random button */
+
+@keyframes spin1 {
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    20%{
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(180deg) scale(0);
+    }
+}
+
+@keyframes spin2 {
+    0%{
+        transform: rotate(180deg) scale(0);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.spin1 {
+    animation: spin1 .5s 1;
+}
+
+.spin2 {
+    animation: spin2 .5s 1;
+}
+
+#transition-box {
+    height: auto;
+    transition: all 2s 0s;
+}
