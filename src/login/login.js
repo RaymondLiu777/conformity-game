@@ -1,8 +1,12 @@
+var clicked = "";
+
 //Validiate fields
 document.querySelector("#login-form").onsubmit = function(event) {
     document.querySelector("#form-username").value = document.querySelector("#form-username").value.trim();
     let username = document.querySelector("#form-username").value.trim();
     let password = document.querySelector("#form-password").value.trim();
+
+    let valid = true;
 
     if(username.length <= 0 || username.length > 45 || password.length <= 0) {
         if(username.length <= 0 || username.length > 45) {
@@ -12,12 +16,22 @@ document.querySelector("#login-form").onsubmit = function(event) {
             document.querySelector("#form-password").classList.add("is-invalid");
         }
         event.preventDefault();
+        valid = false;
+    }
+    //Check if it is the register and popup warning
+    if(valid && clicked == "register") {
+        return confirm('This is a student project, please do not use any sort of sensitive password. Are you sure you want to continue making the account?');
     }
 };
 
 document.querySelector("#register-btn").onclick = function(event) {
+    clicked = "register";
     document.querySelector("#login-text").textContent = "Register";
     document.querySelector(".js-remove").remove();
+}
+
+document.querySelector("#login-btn").onclick = function(event) {
+    clicked = "login";
 }
 
 let addPasswordLength = false;
